@@ -7,7 +7,7 @@ export default function AuthOptions() {
 
   const history = useHistory();
 
-  const register = () => history.push("/register");
+  //const register = () => history.push("/register"); <button onClick={register}>Register</button>
   const login = () => history.push("/login");
   const logout = () => {
     setUserData({
@@ -20,12 +20,14 @@ export default function AuthOptions() {
   return (
     <nav className="auth-options">
       {userData.user ? (
-        <button onClick={logout}>Log out</button>
-      ) : (
         <>
-          <button onClick={register}>Register</button>
-          <button onClick={login}>Log in</button>
+        
+        <button onClick={logout}>Cerrar sesión</button>
         </>
+      ) : (
+                
+          <button onClick={login}>Log in</button>
+        
       )}
     </nav>
   );
