@@ -22,7 +22,7 @@ export default function AuthOptions() {
       {userData.user ? (
         <>
         
-        <button onClick={logout}>Cerrar sesión</button>
+        
         </>
       ) : (
                 

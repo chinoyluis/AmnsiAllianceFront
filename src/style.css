@@ -1,78 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
 
-/* reset */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  color: #2199df;
-  text-decoration: unset;
-}
-
-ul {
-  margin-left: 1.5rem;
-  list-style: none;
-}
-
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  font-family: 'Baloo Tamma 2', cursive;
-}
-
-/* general */
-
-body {
-  font-family: 'Baloo Tamma 2', cursive;
-}
-
-
-
-
-/* header */
-
-#header {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #44100e;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.425);
-}
-#header .title {
-  margin: 0;
-  padding: 0 1rem;
-  color: #ffffff;
-}
-#header .auth-options {
-  height: 100%;
-  display: flex;
-}
-#header .auth-options button {
-  padding: 0 1rem;
-  background-color: #b91b1b;
-  color: #ffffff;
-  font-size: 1.1rem;
-}
-#header .auth-options button:hover {
-  background-color: #be3a3a;
-}
 
 /* form */
 
@@ -93,6 +19,7 @@ body {
   padding: 0.3rem;
   border: 1px solid #c2c2c2;
   border-radius: 8px;
+  background-color: #fcf3d7;
   background-color: #f0f0f0;
   font-size: 1.1rem;
 }

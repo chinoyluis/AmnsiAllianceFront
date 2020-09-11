@@ -1,44 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components"
-
+import UserContext from "../../context/UserContext"
 import AuthOptions from "../auth/AuthOptions";
 import logo from "../../components/imagenes/amns-logo.png"
 
 
 
 const HeaderBar = styled.header`
-  width: 100%;
-  height: fit-content;
+  width: 100%; 
+  top: 0;
+  left: 0;
   margin: 0;
   padding: 0;
-  order: 1;
+  
 `
 const NavBar = styled.nav`
   width: 100%;
   display: flex; 
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   background: #44100e;
   border-bottom: 2px solid rgba(255, 255, 255, 0.425);
   padding: 0 35px;
-  button {
-    color: white;
-    background: rgba(0, 0, 0, 0.08);
-    padding: 25px;
-    height: 100%;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-  }
+  height: 100px;
+ 
 `
+
+
 const Logo = styled.img`
 
-margin: 15px auto;
-max-width: 150px;
-@media (max-width: 550px) {
-  display: none;
-}
+  margin: 15px auto 0;
+  max-width: 125px;
 
 `
 
@@ -46,18 +40,23 @@ max-width: 150px;
 
 export default function Header() {
   
+  const { userData, setUserData } = useContext(UserContext);
 
   return (
+    
     <HeaderBar>
+    
       <NavBar>
-
       
+      
+        
         <Link to="/">
           <Logo src={logo} alt="amnsalliance-logo" />
         </Link>
         
-      <AuthOptions />
+      
       </NavBar>
+    
     </HeaderBar>
   );
 }

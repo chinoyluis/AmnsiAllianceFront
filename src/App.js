@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Axios from "axios";
-import Home from "./components/pages/Home";
+import Main from "./components/pages/Main";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import UserContext from "./context/UserContext";
-
+import GlobalStyle from "./components/misc/GlobalStyle";
 import "./style.css";
 
 export default function App() {
@@ -45,24 +45,25 @@ export default function App() {
     
       <BrowserRouter>
         <UserContext.Provider value={{ userData, setUserData }}>
+        <GlobalStyle />
+
         
-          <div className="container">
+          <>
           {!userData.token ? (  
               <Switch>
                 <Route path="/" component={Login} />
                 
               </Switch> ) : (
               <Switch>
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" component={Main} />
                 <Redirect from="/login" to="/" exact />
                 <Route path="/register" component={Register} />
               </Switch> 
             )
-          }
-              
+          }      
+          </> 
 
-           
-          </div> 
+
         </UserContext.Provider>
       </BrowserRouter>
     </>
